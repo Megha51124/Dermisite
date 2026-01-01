@@ -1,0 +1,648 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.leaf-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+.star-decoration {
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+.hero-image-container img {
+    transition: transform 0.3s ease;
+}
+
+.hero-image-container:hover img {
+    transform: scale(1.05);
+}
+
+.carousel-track {
+    will-change: transform;
+}
+
+.carousel-item {
+    flex-shrink: 0;
+    transition: opacity 0.5s ease;
+}
+
+.testimonial-bubble {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-question svg {
+    transition: transform 0.3s ease;
+}
+
+.faq-question svg.rotate-45 {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-answer.hidden {
+    max-height: 0;
+    opacity: 0;
+}
+
+.faq-answer:not(.hidden) {
+    max-height: 500px;
+    opacity: 1;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 100%;
+    }
+
+    .testimonial-bubble {
+        position: static !important;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-image-container .absolute {
+        display: none;
+    }
+}
+
+.bg-white {
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(201, 169, 126, 0.1);
+}
+
+.hover\:scale-110:hover {
+    transform: scale(1.1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideUp {
+    animation: slideUp 0.6s ease-out;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+::selection {
+    background-color: rgba(201, 169, 126, 0.3);
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5f1e8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c9a97e;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8b6f47;
+}
+
+
+/*  */
+
+/* style.css */
+body {
+    background-color: #fffaf7; /* Matches the soft beige background in the image */
+}
+
+#slider {
+    /* Prevents layout shifts while images load */
+    will-change: transform;
+}
+
+
+/* question page */
+
+.option-btn {
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: white;
+  font-weight: 500;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.option-btn:hover {
+  background: #f0fdfa;
+  border-color: #2f7d69;
+  color: #2f7d69;
+}
+
+.option-btn.active {
+  background: #2f7d69;
+  color: white;
+  border-color: #2f7d69;
+}
+
+/* routine page */
+
+.ritual-box {
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.ritual-head {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.ritual-head h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+
+/* =========================
+   Ritual Steps Timeline
+========================= */
+
+.ritual-list li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ritual-list span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fb923c;
+  margin-top: 6px;
+}
+
+.ritual-list.blue span {
+  background: #818cf8;
+}
+
+
+/* =========================
+   Section Titles
+========================= */
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   Remedy Cards
+========================= */
+
+.remedy-card {
+  background: white;
+  border-radius: 26px;
+  padding: 26px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.remedy-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.green {
+  background: #dcfce7;
+}
+
+.blue {
+  background: #e0f2fe;
+}
+
+.purple {
+  background: #f3e8ff;
+}
+
+.tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.chips span {
+  background: #f4f4f4;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+
+/* =========================
+   Chat Box
+========================= */
+
+.chatbox {
+  background: white;
+  border-radius: 26px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-head {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 20px;
+}
+
+.msg {
+  background: #f4f4f4;
+  padding: 14px;
+  border-radius: 14px;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #eee;
+  padding: 14px;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+
+.chat-input button {
+  background: #2f7d69;
+  color: white;
+  padding: 0 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+
+
+.info-box {
+  background: #fff3e9;
+  padding: 22px;
+  border-radius: 20px;
+}
+
+
+/* Remedy Typography */
+.remedy-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 18px;
+  color: #1f2937;
+}
+
+.remedy-desc {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #9ca3af;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Benefits List */
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits li {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.benefits li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #9ca3af;
+}
+
+/* Ingredient Chips Container */
+.chips {
+  display: flex;
+  flex-wrap: wrap;        /* Allows items to move to next line */
+  gap: 8px;              /* Space between chips */
+  margin-top: 8px;
+}
+
+/* Individual Chip */
+.chips span {
+  background: #f4f4f4;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #374151;
+  white-space: nowrap;  /* Prevents breaking words */
+  display: inline-block;
+}
+
+
+/* login page */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.animate-slide-out {
+  animation: slide-out 0.3s ease-out;
+}
+
+/* Input Styling */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-size: 16px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.1);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #d1d5db;
+}
+
+/* Button Styling */
+button {
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Form */
+#signUpForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .absolute {
+    display: none !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Form validation feedback */
+input:invalid:focus {
+  border-color: #ef4444;
+}
+
+/* Spin animation for loading states */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

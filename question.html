@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Skin Profile | DermiSite</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#fdf6f0] flex items-center justify-center min-h-screen">
+
+<div class="w-full max-w-4xl bg-white rounded-3xl shadow-xl p-10">
+
+  <div class="flex justify-between items-center mb-8">
+    <h2 class="text-lg font-semibold text-gray-700">Skin Assessment</h2>
+    <span id="stepCount" class="text-sm text-gray-500">1 / 17</span>
+  </div>
+
+  <div id="questionBox"></div>
+
+  <!-- WHY WE ASK -->
+  <div class="mt-10 bg-[#fafafa] p-6 rounded-xl border">
+    <h4 class="text-sm font-semibold text-gray-600 mb-2">WHY WE ASK</h4>
+    <p id="whyText" class="text-gray-600 leading-relaxed text-sm"></p>
+  </div>
+
+  <div class="flex justify-between mt-10">
+    <button onclick="prevQuestion()" class="px-6 py-3 rounded-full border text-gray-600 hover:bg-gray-100">Back</button>
+    <button onclick="nextQuestion()" class="px-8 py-3 bg-[#2f7d69] text-white rounded-full hover:bg-[#256655]">Next</button>
+  </div>
+
+</div>
+
+<script src="question.js"></script>
+
+
+</body>
+</html>

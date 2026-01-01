@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermisite </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F5F1E8',
+                        tan: '#C9A97E',
+                        brown: '#8B6F47',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-cream font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-[#fdf6f0]  sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="Dermisite/photo/logo.jpg" class="h-[230px] w-auto" alt="Dermisite logo">
+
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#product" class="text-sm font-medium hover:text-tan transition">PRODUCT</a>
+                    <a href="#benefit" class="text-sm font-medium hover:text-tan transition">Benefit</a>
+                    <a href="routine.html" class="text-sm font-medium hover:text-tan transition">
+                         ROUTINE PLANNER</a>
+                    <a href="#blog" class="text-sm font-medium hover:text-tan transition">BLOG</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-tan transition">CONTACT</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-tan transition">EXPERT</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button class="hover:text-tan transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                    <button class="hover:text-tan transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                    </button>
+                    
+                  <button id="accountBtn" class="hover:text-tan transition">
+                     <img src="Dermisite/photo/icon.png" class="w-6 h-6">
+                 </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <!-- <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#product" class="block text-sm font-medium hover:text-tan">PRODUCT</a>
+                <a href="#benefit" class="block text-sm font-medium hover:text-tan">BENEFIT</a>
+                <a href="#blog" class="block text-sm font-medium hover:text-tan">BLOG</a>
+                <a href="#contact" class="block text-sm font-medium hover:text-tan">CONTACT</a>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <h1 class="text-5xl md:text-4xl font-serif leading-tight">
+                        Your Skin & Hair , <br>Personally Perfected
+                    </h1>
+                    <p class="text-gray-600 max-w-md">
+                        Tailored Ayurvedic remedies and routines powered by AI , beacuse your beauty desereves more than guesswork
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                       <button onclick="goToQuestions()" class="bg-tan text-white px-6 py-3 rounded-3xl hover:bg-brown transition flex items-center gap-3">
+                            <span>Start Consultation</span>
+
+                       <img src="Dermisite/photo/rightarrow.png" class="w-8" alt="arrow">
+                    </button>
+
+                       
+                        <button class="border border-tan text-tan px-6 py-3 rounded-3xl hover:bg-tan hover:text-white transition">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="hero-image-container">
+                        <img src="Dermisite/photo/face.webp" alt="Skincare Product" class="w-full rounded-full">
+                     
+                        
+                    </div>
+
+                    <!-- Product Thumbnails -->
+                    <div class="absolute right-0 top-1/2 transform -translate-y-1/2 space-y-3">
+                        <div class="bg-white p-2 rounded-lg shadow-lg w-16 h-16 hover:scale-110 transition cursor-pointer">
+                            <img src="https://images.pexels.com/photos/3762877/pexels-photo-3762877.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Product 1" class="w-full h-full object-cover rounded">
+                        </div>
+                        <div class="bg-white p-2 rounded-lg shadow-lg w-16 h-16 hover:scale-110 transition cursor-pointer">
+                            <img src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Product 2" class="w-full h-full object-cover rounded">
+                        </div>
+                        <div class="bg-white p-2 rounded-lg shadow-lg w-16 h-16 hover:scale-110 transition cursor-pointer">
+                            <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Product 3" class="w-full h-full object-cover rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+ <div class="relative w-full max-w-6xl mx-auto px-10 py-12 overflow-hidden">
+  
+  <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-2 shadow-md hover:bg-gray-50 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg>
+  </button>
+
+  <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-2 shadow-md hover:bg-gray-50 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+    </svg>
+  </button>
+
+  <div id="slider" class="flex transition-transform duration-500 ease-out gap-4">
+    
+    <div class="min-w-full sm:min-w-[calc(50%-1rem)] lg:min-w-[calc(20%-1rem)] bg-white rounded-xl p-6 flex flex-col items-center text-center border border-transparent hover:shadow-2xl hover:border-[#8b6f47] shadow-sm">
+      <img src="Dermisite/photo/pro1.png" alt="Repair Conditioner" class="h-48 object-contain mb-4">
+      <h3 class="text-gray-700 font-medium text-sm">Custom Repair Conditioner</h3>
+      <a href="#" class="mt-4 text-xs text-orange-400 font-semibold uppercase tracking-wider hover:underline">Order Now</a>
+    </div>
+
+    <div class="min-w-full sm:min-w-[calc(50%-1rem)] lg:min-w-[calc(20%-1rem)] bg-white rounded-xl p-6 flex flex-col items-center text-center border border-transparent hover:shadow-2xl hover:border-[#8b6f47] shadow-sm">
+      <img src="Dermisite/photo/pro2.png" alt="Cream Moisturizer" class="h-48 object-contain mb-4">
+      <h3 class="text-gray-700 font-medium text-sm">Custom Cream Moisturizer</h3>
+      <a href="#" class="mt-4 text-xs text-orange-400 font-semibold uppercase tracking-wider hover:underline">Order Now</a>
+    </div>
+
+    <div class="min-w-full sm:min-w-[calc(50%-1rem)] lg:min-w-[calc(20%-1rem)] bg-white rounded-xl p-6 flex flex-col items-center text-center border border-transparent hover:shadow-2xl hover:border-[#8b6f47] shadow-sm">
+      <img src="Dermisite/photo/pro3.png" alt="Face Cream" class="h-48 object-contain mb-4">
+      <h3 class="text-gray-700 font-medium text-sm">Custom Face Cream</h3>
+      <a href="#" class="mt-4 text-xs text-orange-400 font-semibold uppercase tracking-wider hover:underline">Order Now</a>
+    </div>
+
+    <div class="min-w-full sm:min-w-[calc(50%-1rem)] lg:min-w-[calc(20%-1rem)] bg-white rounded-xl p-6 flex flex-col items-center text-center border border-transparent hover:shadow-2xl hover:border-[#8b6f47] shadow-sm">
+      <img src="Dermisite/photo/pro4.png" alt="Kumkumadi Mask" class="h-48 object-contain mb-4">
+      <h3 class="text-gray-700 font-medium text-sm">Kumkumadi Mask-Scrub</h3>
+      <a href="#" class="mt-4 text-xs text-orange-400 font-semibold uppercase tracking-wider hover:underline">Order Now</a>
+    </div>
+
+    <div class="min-w-full sm:min-w-[calc(50%-1rem)] lg:min-w-[calc(20%-1rem)] bg-white rounded-xl p-6 flex flex-col items-center text-center border border-transparent hover:shadow-2xl hover:border-[#8b6f47] shadow-sm">
+      <img src="Dermisite/photo/pro5.png" alt="Hair Cleanser" class="h-48 object-contain mb-4">
+      <h3 class="text-gray-700 font-medium text-sm">Bringadi Hair Cleanser</h3>
+      <a href="#" class="mt-4 text-xs text-orange-400 font-semibold uppercase tracking-wider hover:underline">Order Now</a>
+    </div>
+
+  </div>
+</div>
+    <!-- Benefits Section -->
+    <section id="benefit" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="relative">
+                        <div class="bg-cream rounded w-full h-[520px] mx-auto overflow-hidden">
+                            <img src="Dermisite/photo/serum.png" alt="Product display" class="w-full h-full">
+                        </div>
+
+                       
+
+                        <div class="star-decoration absolute -bottom-4 right-20 text-tan text-4xl">✦</div>
+                    </div>
+
+                </div>
+
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-serif">Benefit Using Our Product</h2>
+                    <p class="text-gray-600">By using our AI-powered personalized beauty platform, you get safe, effective and holistic skincare & haircare tailored just for you.</p>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 bg-tan/10 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-tan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-xl">100% Natural & Ayurvedic</h3>
+                            <p class="text-sm text-gray-600">All recommendations are based on Ayurvedic and home remedies using natural, safe ingredients.</p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 bg-tan/10 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-tan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-xl">No Side Effect</h3>
+                            <p class="text-sm text-gray-600">Our solutions focus on chemical-free and holistic care, making them safe for long-term use.</p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 bg-tan/10 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-tan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-xl">For All Skin & Hair Type</h3>
+                            <p class="text-sm text-gray-600">Whether oily, dry, sensitive, or combination , our AI customizes routines for everyone..</p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 bg-tan/10 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-tan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-xl">Smart AI Guidance</h3>
+                            <p class="text-sm text-gray-600">The AI chatbot provides instant beauty advice, routines, and product suggestions anytime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="product" class="py-16 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-4xl font-serif mb-2">Featuring Product</h2>
+                    <p class="text-gray-600">Our products are 98%-100% made from natural ingredients for your skin and safe to use for a long...</p>
+                </div>
+                <button class="bg-tan text-white px-6 py-2 rounded hover:bg-brown transition hidden md:block">
+                    See All →
+                </button>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition group">
+                    <div class="relative overflow-hidden">
+                        <div class="absolute top-4 left-4 bg-tan text-white px-3 py-1 rounded text-sm font-medium z-10">
+                            BEST PRODUCT
+                        </div>
+                        <img src="Dermisite/photo/gel.png" alt="Product" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl mb-2">Auravedic Kumkumadi Gel</h3>
+                        <p class="text-sm text-gray-600 mb-4">Helps deeply nourish your skin, leaving skin radiant and glowing....</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <span class="text-sm">5.0</span>
+                            </div>
+                            <span class="text-2xl font-serif">$ 15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition group">
+                    <div class="relative overflow-hidden">
+                        <div class="absolute top-4 left-4 bg-tan text-white px-3 py-1 rounded text-sm font-medium z-10">
+                            SOLD OUT
+                        </div>
+                        <img src="Dermisite/photo/hairmask.png" alt="Product" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl mb-2">The Miracle Scalp & Brow Mask</h3>
+                        <p class="text-sm text-gray-600 mb-4"> Powered by almond, coconut & aloe, to cleanse, nourish and awaken your follicles for real growth results...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <span class="text-sm">5.0</span>
+                            </div>
+                            <span class="text-2xl font-serif">$ 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition group">
+                    <div class="relative overflow-hidden">
+                        <div class="absolute top-4 left-4 bg-tan text-white px-3 py-1 rounded text-sm font-medium z-10">
+                            SALE
+                        </div>
+                        <img src="Dermisite/photo/oil.png" alt="Product" class="w-full h-64 group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl mb-2">Hair Oil</h3>
+                        <p class="text-sm text-gray-600 mb-4">Give your hair the nourishment it deserves with Inde Wild’s Champi Hair Oil, a modern take on Ayurvedic hair rituals....</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <span class="text-sm">5.0</span>
+                            </div>
+                            <span class="text-2xl font-serif">$ 18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Articles -->
+    <section id="blog" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-4xl font-serif mb-2">News & Article</h2>
+                    <p class="text-gray-600">You can read great articles and information about our skincare products and tips</p>
+                </div>
+                <button class="bg-tan text-white px-6 py-2 rounded hover:bg-brown transition hidden md:block">
+                    See All →
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-cream rounded-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="relative">
+                        <img src="Dermisite/photo/tips.png" alt="Article" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded text-xs font-medium">
+                            TIPS
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs text-gray-500 mb-2">OLIVIA K. • 15 NOVEMBER 2023</p>
+                        <h3 class="font-serif text-lg mb-2">Sequence tips to using skincare for beginner</h3>
+                        <p class="text-sm text-gray-600">Want to know the right sequence for using skincare products? Here's the complete guide...</p>
+                    </div>
+                </div>
+
+                <div class="bg-cream rounded-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="relative">
+                        <img src="Dermisite/photo/spa.png" alt="Article" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded text-xs font-medium">
+                            SKINCARE
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs text-gray-500 mb-2">JESSICA • 20 OCTOBER 2023</p>
+                        <h3 class="font-serif text-lg mb-2">Here's how to maximize self-care at home</h3>
+                        <p class="text-sm text-gray-600">Turn your home into a spa sanctuary with these simple self-care techniques...</p>
+                    </div>
+                </div>
+
+                <div class="bg-cream rounded-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="relative">
+                        <img src="Dermisite/photo/mask.png" alt="Article" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded text-xs font-medium">
+                            ROUTINE
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs text-gray-500 mb-2">AMANDA • 8 SEPTEMBER 2023</p>
+                        <h3 class="font-serif text-lg mb-2">Tips for making masks with natural ingredients</h3>
+                        <p class="text-sm text-gray-600">Discover how to create effective face masks using ingredients from your kitchen...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-serif mb-4">Why Customers Trust Us</h2>
+                <p class="text-gray-600">Without you we wouldn't be here, here are some testimonials from our users</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Customer" class="w-12 h-12 rounded-full">
+                        <div>
+                            <h4 class="font-medium">Samantha Johanez</h4>
+                            <div class="flex text-yellow-400">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">I love how personalized the recommendations are. My skin feels healthier and more balanced after following the routine suggested by the AI!.</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Customer" class="w-12 h-12 rounded-full">
+                        <div>
+                            <h4 class="font-medium">Samantha Craig</h4>
+                            <div class="flex text-yellow-400">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">The Ayurvedic remedies really work. My hair fall has reduced and my scalp feels much better. It’s simple and natural — exactly what I needed.</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Customer" class="w-12 h-12 rounded-full">
+                        <div>
+                            <h4 class="font-medium">Nikki Asterya</h4>
+                            <div class="flex text-yellow-400">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">This platform made skincare so easy for me. The chatbot gave clear advice and the products feel gentle with no side effects. Highly recommended.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-4xl font-serif mb-2">Frequently Asked Questions</h2>
+                <p class="text-gray-600 mb-6">Don't see your question? Let's contact us.</p>
+                <button class="bg-tan text-white px-6 py-2 rounded hover:bg-brown transition">
+                    Send Mail
+                </button>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item border-b border-gray-200">
+                    <button class="faq-question w-full py-4 flex justify-between items-center text-left hover:text-tan transition">
+                        <span class="font-medium">Is this skincare safe for all skin types?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden pb-4 text-gray-600">
+                        Yes, our products are formulated to be safe and effective for all skin types. We use natural ingredients that are gentle yet powerful.
+                    </div>
+                </div>
+
+                <div class="faq-item border-b border-gray-200">
+                    <button class="faq-question w-full py-4 flex justify-between items-center text-left hover:text-tan transition">
+                        <span class="font-medium">Can this be made from natural ingredients?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden pb-4 text-gray-600">
+                        Absolutely! All our products are made from 98-100% natural ingredients, carefully sourced and tested for quality.
+                    </div>
+                </div>
+
+                <div class="faq-item border-b border-gray-200">
+                    <button class="faq-question w-full py-4 flex justify-between items-center text-left hover:text-tan transition">
+                        <span class="font-medium">Can I cancel before buying skincare that suits my skin?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden pb-4 text-gray-600">
+                        Yes, you can cancel your order before it ships. Please contact our customer service team for assistance.
+                    </div>
+                </div>
+
+                <div class="faq-item border-b border-gray-200">
+                    <button class="faq-question w-full py-4 flex justify-between items-center text-left hover:text-tan transition">
+                        <span class="font-medium">Do I get a product replacement if it breaks during delivery?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden pb-4 text-gray-600">
+                        Yes, we offer full replacement for any products damaged during shipping. Just contact us with photos within 48 hours of delivery.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="star-decoration absolute bottom-20 right-20 text-tan text-8xl opacity-20">✦</div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#fdf6f0] py-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 items-start">
+                 <div >
+                      <img src="Dermisite/photo/logo.jpg" class="h-[150px] w-auto " alt="Dermisite logo">
+                    
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#product" class="hover:text-tan transition">Products</a></li>
+                        <li><a href="#benefit" class="hover:text-tan transition">Benefits</a></li>
+                        <li><a href="#blog" class="hover:text-tan transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-tan transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-tan transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-tan transition">Shipping</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Newsletter</h4>
+                    <p class="text-sm text-gray-600 mb-4">Subscribe for updates and offers</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-l focus:outline-none">
+                        <button class="bg-tan text-white px-4 py-2 rounded-r hover:bg-brown transition">→</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-300 text-center text-sm text-gray-600">
+                <p>&copy; 2025 Dermisite. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+
+
+</body>
+</html>

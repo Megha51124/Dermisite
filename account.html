@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Account | DermiSite</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#fdfaf6] min-h-screen">
+
+<div class="max-w-7xl mx-auto px-6 py-14">
+
+  <!-- Header -->
+  <h1 class="text-3xl font-bold text-gray-800 mb-10">My Account</h1>
+
+  <!-- Profile Overview -->
+  <div class="bg-white rounded-3xl shadow p-8 flex flex-col md:flex-row gap-8 items-center">
+    <img src="Dermisite/photo/profile.png" class="w-28 h-28 rounded-full border" />
+    <div class="flex-1">
+      <h2 class="text-2xl font-semibold">Megha Apalia</h2>
+      <p id="userEmail" class="text-gray-500">Loading...</p>
+
+      <div class="flex gap-4 mt-4 text-sm">
+        <span class="bg-[#e9f4f1] text-[#2f7d69] px-4 py-1 rounded-full">Dry Skin</span>
+        <span class="bg-[#f3e8ff] text-purple-700 px-4 py-1 rounded-full">Vata-Pitta</span>
+        <span class="bg-[#fff3e9] text-orange-700 px-4 py-1 rounded-full">Skin Score: 82</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid Sections -->
+  <div class="grid lg:grid-cols-2 gap-10 mt-14">
+
+    <!-- Skin Profile -->
+    <div class="bg-white rounded-3xl shadow p-8">
+      <h3 class="section-title mb-6">Skin Profile</h3>
+      <div class="grid grid-cols-2 gap-4 text-gray-600">
+        <p>Concerns: <strong>Acne, Dryness, Pigmentation</strong></p>
+        <p>Sensitivity: <strong>High</strong></p>
+        <p>Skin Tone: <strong>Medium</strong></p>
+        <p>Dark Circles: <strong>Yes</strong></p>
+        <p>Allergies: <strong>Fragrance, Alcohol</strong></p>
+      </div>
+    </div>
+
+    <!-- Lifestyle -->
+    <div class="bg-white rounded-3xl shadow p-8">
+      <h3 class="section-title mb-6">Lifestyle</h3>
+      <div class="grid grid-cols-2 gap-4 text-gray-600">
+        <p>Sleep: <strong>6 hrs</strong></p>
+        <p>Stress: <strong>High</strong></p>
+        <p>Water Intake: <strong>Low</strong></p>
+        <p>Makeup: <strong>Yes</strong></p>
+        <p>Diet: <strong>High Sugar</strong></p>
+      </div>
+    </div>
+
+    <!-- My Routine -->
+    <div class="bg-white rounded-3xl shadow p-8">
+      <h3 class="section-title mb-6">My Routine</h3>
+      <p class="text-gray-600 mb-4">
+        Personalized routine designed for your Vata-Pitta skin.
+      </p>
+      <ul class="list-disc list-inside text-gray-600 mb-6">
+        <li>Gentle Cleanse</li>
+        <li>Hydration & Toner</li>
+        <li>Sun Protection</li>
+        <li>Night Repair</li>
+      </ul>
+      <a href="routine.html" class="bg-[#2f7d69] text-white px-6 py-3 rounded-full inline-block">
+        View My Routine
+      </a>
+    </div>
+
+    <!-- AI Preferences -->
+    <div class="bg-white rounded-3xl shadow p-8">
+      <h3 class="section-title mb-6">AI Preferences</h3>
+      <div class="text-gray-600 space-y-3">
+        <p>Preferred Ingredients: <strong>Aloe, Rose, Ceramides</strong></p>
+        <p>Avoid Ingredients: <strong>Alcohol, Fragrance</strong></p>
+        <p>Retinol Usage: <strong>No</strong></p>
+        <p>Sensitivity Mode: <strong>Enabled</strong></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Account Settings -->
+  <div class="bg-white rounded-3xl shadow p-8 mt-14">
+    <h3 class="section-title mb-6">Account Settings</h3>
+    <div class="flex flex-wrap gap-4">
+      <button class="px-6 py-3 border rounded-full hover:bg-gray-100">Change Email</button>
+      <button class="px-6 py-3 border rounded-full hover:bg-gray-100">Change Password</button>
+      <button class="px-6 py-3 border rounded-full hover:bg-gray-100">Privacy Settings</button>
+      <button id="logoutBtn" class="px-6 py-3 border rounded-full text-red-600 hover:bg-red-50">Sign Out</button>
+
+    </div>
+  </div>
+
+</div>
+
+<script type="module" src="account.js"></script>
+
+</body>
+</html>
